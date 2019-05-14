@@ -87,7 +87,7 @@ class AnimalController extends Controller
     {
         $animal = Animal::find($id);
         $animal->delete();
-
+        // isso
         return redirect('/lista-animais')->with('success', 'Animal deletado com sucesso.');
     }
 }
