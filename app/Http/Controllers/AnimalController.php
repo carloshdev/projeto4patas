@@ -83,14 +83,11 @@ class AnimalController extends Controller
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Animal  $animal
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Animal $animal)
+    public function destroy($id)
     {
-        //
+        $animal = Animal::find($id);
+        $animal->delete();
+
+        return redirect('/lista-animais')->with('success', 'Animal deletado com sucesso.');
     }
 }
