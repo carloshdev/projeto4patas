@@ -1,5 +1,7 @@
 <?php
 
+use App\Animal;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,9 +17,19 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/luiz', function () {
-    return view('luiz');
+Route::get('/lista-animais', function () {
+    $animais = Animal::orderBy('name', 'asc')->get();
+    $dado = "Você tem dado em casa?";
+    
+    return view('listaAnimais', [ 'animais' => $animais, 'qualquer_dado' => $dado ]);
 });
+
+Route::get('/cadastro-animais', function () {
+   
+    return view('cadastroAnimais');
+});
+
+Route::resource('animais', 'AnimalController');
 
 Auth::routes();
 
