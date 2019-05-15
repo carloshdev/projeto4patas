@@ -22,12 +22,12 @@ Route::get('/lista-animais', function () {
     $dado = "Você tem dado em casa?";
     
     return view('listaAnimais', [ 'animais' => $animais, 'qualquer_dado' => $dado ]);
-});
+}) ->name('listar-animais');
 
 Route::get('/cadastro-animais', function () {
-   
+      
     return view('cadastroAnimais');
-});
+})->name('cadastro-animais');
 
 Route::resource('animais', 'AnimalController');
 

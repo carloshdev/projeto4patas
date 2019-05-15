@@ -20,7 +20,6 @@
 			<td>Nome</td>
 			<td>Raça</td>
 			<td>Gênero</td>
-			<td>Deletar</td>
 			</tr>
 		</thead>
 		<tbody>
