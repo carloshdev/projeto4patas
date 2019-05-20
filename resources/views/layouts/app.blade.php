@@ -50,6 +50,15 @@
                             @endif
                         @else
                             <li class="nav-item">
+                                <a class="nav-link" href="{{ route('local-mapa') }}">{{ __('Localização da ONG') }}</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('listar-servicos') }}">{{ __('Listar Serviços') }}</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('cadastro-servicos') }}">{{ __('Cadastrar Serviços') }}</a>
+                            </li>
+                            <li class="nav-item">
                                 <a class="nav-link" href="{{ route('listar-animais') }}">{{ __('Listar Animais') }}</a>
                             </li>
                             <li class="nav-item">

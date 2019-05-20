@@ -12,25 +12,25 @@
       {{ session()->get('success') }}  
     </div><br />
   @endif
-  @if(count($animais) > 0)
+  @if(count($servicos) > 0)
 	<table class="table table-striped">
 		<thead>
 			<tr>
 			<td>ID</td>
 			<td>Nome</td>
-			<td>Raça</td>
-			<td>Gênero</td>
+			<td>Duração</td>
+			<td>Responsável Atual</td>
 			</tr>
 		</thead>
 		<tbody>
-			@foreach($animais as $animal)
+			@foreach($servicos as $servico)
 			<tr>
-				<td>{{$animal->id_animal}}</td>
-				<td>{{$animal->name}}</td>
-				<td>{{$animal->breed}}</td>
-				<td>{{$animal->gender}}</td>
+				<td>{{$servico->id}}</td>
+				<td>{{$servico->nome}}</td>
+				<td>{{$servico->duracao}}</td>
+				<td>{{$servico->responsavelAtual}}</td>
 				<td>
-					<form action="{{ route('animais.destroy', $animal->id_animal)}}" method="post">
+					<form action="{{ route('servicos.destroy', $servico->id)}}" method="post">
 						@csrf
 						@method('DELETE')
 						<button class="btn btn-danger" type="submit">Deletar</button>
@@ -41,7 +41,9 @@
 		</tbody>
 	</table>
 	@else
-  		<h3> Nenhum animal cadastrado </h3>
+  		<h3> Nenhum serviço cadastrado </h3>
 	@endif
 <div>
+
 @endsection
+
