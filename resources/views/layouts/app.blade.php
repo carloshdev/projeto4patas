@@ -49,21 +49,39 @@
                                 </li>
                             @endif
                         @else
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('local-mapa') }}">{{ __('Localização da ONG') }}</a>
-                            </li>
+
+                            <!-- .......................SERVIÇOS....................... -->
+                            <!-- .......................Listar -->
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('listar-servicos') }}">{{ __('Listar Serviços') }}</a>
                             </li>
+                            <!-- .......................Cadastrar -->
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('cadastro-servicos') }}">{{ __('Cadastrar Serviços') }}</a>
                             </li>
+
+                            <!-- .......................ANIMAIS....................... -->
+                            <!-- .......................Listar -->
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('listar-animais') }}">{{ __('Listar Animais') }}</a>
                             </li>
+                            <!-- .......................Cadastro -->
+                            <?php
+                                if(Auth::check()){
+                                    $user = Auth::user();
+                                    if($user->tipoUsuario == 0){ ?> 
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="{{ route('cadastro-animais') }}">{{ __('Cadastrar Animais') }}</a>
+                                        </li>            
+                            <?php   }       
+                                }
+                            ?>
+                            
+                            <!-- .......................LOCALIZAÇÃO....................... -->
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('cadastro-animais') }}">{{ __('Cadastrar Animais') }}</a>
+                                <a class="nav-link" href="{{ route('local-mapa') }}">{{ __('Localização') }}</a>
                             </li>
+                            
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>
@@ -81,6 +99,18 @@
                                     </form>
                                 </div>
                             </li>
+                        <?php /* 
+                            <li class="nav-item dropdown">
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                {{ __('Serviços') }} <span class="caret"></span>
+                                </a>
+
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">                                
+                                    <a class="nav-link" href="{{ route('listar-servicos') }}">{{ __('Listar Serviços') }}</a>
+                                    <a class="nav-link" href="{{ route('cadastro-servicos') }}">{{ __('Cadastrar Serviços') }}</a>
+                                </div>
+                            </li>
+                        */?>
                         @endguest
                     </ul>
                 </div>

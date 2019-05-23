@@ -29,6 +29,13 @@
 				<td>{{$animal->name}}</td>
 				<td>{{$animal->breed}}</td>
 				<td>{{$animal->gender}}</td>
+				<td>	
+					<form action="{{ route('animais.destroy', $animal->id_animal)}}" method="post">
+						@csrf
+						@method('DELETE')
+						<button class="btn btn-small btn-info" type="submit">Editar</button>
+					</form>
+				</td>
 				<td>
 					<form action="{{ route('animais.destroy', $animal->id_animal)}}" method="post">
 						@csrf

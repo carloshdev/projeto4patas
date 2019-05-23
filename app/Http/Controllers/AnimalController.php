@@ -78,9 +78,16 @@ class AnimalController extends Controller
      * @param  \App\Animal  $animal
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Animal $animal)
+    public function update(Request $request, $id)
     {
-        //
+        $validatedData = $request->validate([
+            'name' => 'required',
+            'breed' => 'required',
+            'gender' => 'required',
+        ]);
+        Animal::whereId($id)->update($validatedData);
+
+        return redirect('/lista-animais')->with('success', 'Animal editado com sucesso');
     }
 
     public function destroy($id)

@@ -14,10 +14,12 @@ class CreateAnimalsTable extends Migration
     public function up()
     {
         Schema::create('animals', function (Blueprint $table) {
+            // Alterar nomes para português
             $table->bigIncrements('id_animal');
             $table->string('name');
             $table->string('breed');
             $table->string('gender');
+            // ADICIONAR $table->string('date');
             $table->timestamps();
         });
     }
