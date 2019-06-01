@@ -68,7 +68,7 @@ class AnimalController extends Controller
      */
     public function edit(Animal $animal)
     {
-        //
+        return view('listaAnimais', compact('animal'));
     }
 
     /**
@@ -80,7 +80,7 @@ class AnimalController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $validatedData = $request->validate([
+       $validatedData = $request->validate([
             'name' => 'required',
             'breed' => 'required',
             'gender' => 'required',
@@ -88,6 +88,7 @@ class AnimalController extends Controller
         Animal::whereId($id)->update($validatedData);
 
         return redirect('/lista-animais')->with('success', 'Animal editado com sucesso');
+        
     }
 
     public function destroy($id)

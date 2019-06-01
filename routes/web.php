@@ -12,61 +12,60 @@ use App\Servico;
 | contains the "web" middleware group. Now create something great!
 |
 */
+//------------------------------------------------------------------------------------
+// AUTH ------------------------------------------------------------------------------
+Route::middleware(['auth'])->group(function () {
+    //rotas de serviços que requerem autenticação
+    Route::get('/cadastro-servicos', function () {
+        return view('cadastroServicos');
+    })->name('cadastro-servicos');
 
-Route::get('/', function () {
-    return view('welcome');
+    Route::resource('servicos', 'ServicoController');
+
+    //rotas de animais que requerem autenticaçao
+    Route::get('/cadastro-animais', function () {
+        return view('cadastroAnimais');
+    })->name('cadastro-animais');
+
+    Route::get('/{$id}/editar-animal', function ($id) {
+        $animal = Animal::findOrFail($id);
+        return view('editarAnimal', compact($animal));
+    })->name('editar-animal');
+
+    Route::resource('animais', 'AnimalController');
+
+    // HOME ---------------------------------------------------------------------------
+    Route::get('/home', function () {
+    return view('home');
 });
 
-//------------------------------------------------------------------------------------
-// ANIMAIS ---------------------------------------------------------------------------
-
-Route::get('/lista-animais', function () {
-    $animais = Animal::orderBy('name', 'asc')->get();
-    $dado = "Teste Animais";
-    
-    return view('listaAnimais', [ 'animais' => $animais, 'qualquer_dado' => $dado ]);
-}) ->name('listar-animais');
-
-Route::get('/cadastro-animais', function () {
-    
-    return view('cadastroAnimais');
-
-})->name('cadastro-animais');
-
-Route::get('/editar-animal', function ($id) {
-    $animal = Animal::findOrFail($id);
-    return view('editarAnimal', compact($animal));
-
-})->name('editar-animal');
-
-Route::resource('animais', 'AnimalController');
-
-//-------------------------------------------------------------------------------------
-// Serviços ---------------------------------------------------------------------------
-
-Route::get('/cadastro-servicos', function () {
-      
-    return view('cadastroServicos');
-})->name('cadastro-servicos');
-
-
-Route::get('/lista-servicos', function () {
-    $servicos = Servico::orderBy('nome', 'asc')->get();
-    $dado = "Teste Serviços";
-    
-    return view('listaServicos', [ 'servicos' => $servicos, 'qualquer_dado' => $dado ]);
-}) ->name('listar-servicos');
-
-Route::resource('servicos', 'ServicoController');
-
-//-------------------------------------------------------------------------------------
-// MAPA ---------------------------------------------------------------------------
-
-Route::get('/local-mapa', function () {
-      
-    return view('mapaOng');
-})->name('local-mapa');
+});
 
 Auth::routes();
 
+
+//------------------------------------------------------------------------------------
+// PUBLIC-----------------------------------------------------------------------------
+
+Route::get('/lista-animais', function () {
+    $animais = Animal::orderBy('name', 'asc')->get();    
+    return view('listaAnimais', [ 'animais' => $animais ]);
+}) ->name('listar-animais');
+
+Route::get('/lista-servicos', function () {
+    $servicos = Servico::orderBy('nome', 'asc')->get();
+    return view('listaServicos', [ 'servicos' => $servicos ]);
+}) ->name('listar-servicos');
+
+//-------------------------------------------------------------------------------------
+// MAPA ---------------------------------------------------------------------------
+Route::get('/local-mapa', function () {  
+    return view('mapaOng');
+})->name('local-mapa');
+
 Route::get('/auth/login', 'HomeController@index')->name('home');
+
+// INDEX ---------------------------------------------------------------------------
+Route::get('/', function () {
+    return view('welcome');
+});

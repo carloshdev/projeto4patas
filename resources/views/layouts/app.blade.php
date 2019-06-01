@@ -18,6 +18,8 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+    <link rel="manifest" href="{{ asset('manifest') }}">
 </head>
 <body>
     <div id="app">
@@ -67,14 +69,14 @@
                             </li>
                             <!-- .......................Cadastro -->
                             <?php
-                                if(Auth::check()){
+                                /*if(Auth::check()){
                                     $user = Auth::user();
-                                    if($user->tipoUsuario == 0){ ?> 
+                                    if($user->tipoUsuario == 0){*/ ?> 
                                         <li class="nav-item">
                                             <a class="nav-link" href="{{ route('cadastro-animais') }}">{{ __('Cadastrar Animais') }}</a>
                                         </li>            
-                            <?php   }       
-                                }
+                            <?php /*  }       
+                                } */
                             ?>
                             
                             <!-- .......................LOCALIZAÇÃO....................... -->
