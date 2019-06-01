@@ -18,8 +18,8 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-
-    <link rel="manifest" href="{{ asset('manifest') }}">
+    <link rel="manifest" href="/manifest.json">
+    <!--<link rel="manifest" href="{{ asset('manifest') }}"> -->
 </head>
 <body>
     <div id="app">
