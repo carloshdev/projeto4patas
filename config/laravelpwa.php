@@ -4,11 +4,11 @@ return [
     'name' => 'LaravelPWA',
     'manifest' => [
         'name' => env('APP_NAME', '4Patas'),
-        'short_name' => 'PWA',
+        'short_name' => '4Patas',
         'start_url' => '/',
         'background_color' => '#ffffff',
-        'theme_color' => '#000000',
-        'display' => 'standalone',
+        'theme_color' => '#10a496',
+        'display' => 'fullscreen',
         'orientation'=> 'any',
         'icons' => [
             '72x72' => '/images/icons/icon-72x72.png',
