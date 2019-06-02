@@ -18,8 +18,9 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    @laravelPWA
     <!--link rel="manifest" href="/manifest.json"-->
-    <link rel="manifest" href="{{ asset('manifest.json') }}">
+    <!--link rel="manifest" href="{{ asset('manifest.json') }}"-->
 </head>
 <body>
     <div id="app">
