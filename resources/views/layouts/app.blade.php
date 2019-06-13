@@ -69,16 +69,11 @@
                                 <a class="nav-link" href="{{ route('listar-animais') }}">{{ __('Listar Animais') }}</a>
                             </li>
                             <!-- .......................Cadastro -->
-                            <?php
-                                /*if(Auth::check()){
-                                    $user = Auth::user();
-                                    if($user->tipoUsuario == 0){*/ ?> 
+                           
                                         <li class="nav-item">
                                             <a class="nav-link" href="{{ route('cadastro-animais') }}">{{ __('Cadastrar Animais') }}</a>
                                         </li>            
-                            <?php /*  }       
-                                } */
-                            ?>
+                              
                             
                             <!-- .......................LOCALIZAÇÃO....................... -->
                             <li class="nav-item">

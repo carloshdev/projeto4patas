@@ -34,7 +34,8 @@
               <label for="responsavelAtual">Responsável Atual</label>
               <input type="text" class="form-control" name="responsavelAtual"/>
           </div>
-          <button type="submit" class="btn btn-primary">Cadastrar</button>
+          <button type="submit" name="botao-cadastrar" value="cadastro" class="btn btn-primary">Cadastrar</button>
+          <button type="submit" name="botao-cadastrar" value="cadastro-finalizar" class="btn btn-secundary">Cadastrar e Finalizar</button>
       </form>
   </div>
 </div>

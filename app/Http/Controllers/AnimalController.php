@@ -46,7 +46,12 @@ class AnimalController extends Controller
             'gender'=> $request->get('gender')
           ]);
           $animal->save();
-          return redirect('/lista-animais')->with('success', 'Animal adicionado com sucesso!');
+        
+        if($request->get('botao-cadastrar') == 'finalizar-cadastro') {
+            return redirect('/lista-animais')->with('Success', 'Animal adicionado com sucesso!');
+        } else {
+            return redirect('/cadastro-animais')->with('Success', 'Animal adicionado com sucesso!');
+        }
     }
 
     /**

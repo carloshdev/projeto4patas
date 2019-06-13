@@ -8,7 +8,7 @@
 </style>
 <div class="card uper">
   <div class="card-header">
-    Add Animal
+    Adicionar Animal
   </div>
   <div class="card-body">
     @if ($errors->any())
@@ -34,7 +34,8 @@
               <label for="gender">Genero</label>
               <input type="text" class="form-control" name="gender"/>
           </div>
-          <button type="submit" class="btn btn-primary">Cadastrar</button>
+          <button type="submit" name="botao-cadastrar" value="cadastrar" class="btn btn-primary">Cadastrar</button>
+          <button type="submit" name="botao-cadastrar" value="finalizar-cadastro" class="btn btn-secundary">Cadastrar e Finalizar</button>
       </form>
   </div>
 </div>

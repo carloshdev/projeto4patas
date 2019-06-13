@@ -1,7 +1,8 @@
 <?php
-
+use Illuminate\Support\Facades\Auth;
 use App\Animal;
 use App\Servico;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,6 +16,7 @@ use App\Servico;
 //------------------------------------------------------------------------------------
 // AUTH ------------------------------------------------------------------------------
 Route::middleware(['auth'])->group(function () {
+
     //rotas de serviços que requerem autenticação
     Route::get('/cadastro-servicos', function () {
         return view('cadastroServicos');
@@ -36,7 +38,7 @@ Route::middleware(['auth'])->group(function () {
 
     // HOME ---------------------------------------------------------------------------
     Route::get('/home', function () {
-    return view('home');
+        return view('home')/*->middleware('gerencial')*/;
 });
 
 });
@@ -50,18 +52,18 @@ Auth::routes();
 Route::get('/lista-animais', function () {
     $animais = Animal::orderBy('name', 'asc')->get();    
     return view('listaAnimais', [ 'animais' => $animais ]);
-}) ->name('listar-animais');
+}) ->name('listar-animais')/*->middleware('gerencial')*/;
 
 Route::get('/lista-servicos', function () {
     $servicos = Servico::orderBy('nome', 'asc')->get();
     return view('listaServicos', [ 'servicos' => $servicos ]);
-}) ->name('listar-servicos');
+}) ->name('listar-servicos')/*->middleware('gerencial')*/;
 
 //-------------------------------------------------------------------------------------
 // MAPA ---------------------------------------------------------------------------
 Route::get('/local-mapa', function () {  
     return view('mapaOng');
-})->name('local-mapa');
+})->name('local-mapa')/*->middleware('gerencial')*/;
 
 Route::get('/auth/login', 'HomeController@index')->name('home');
 
