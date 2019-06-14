@@ -8,7 +8,7 @@
 </style>
 <div class="card uper">
   <div class="card-header">
-    Adicionar Animal
+    Add Animal
   </div>
   <div class="card-body">
     @if ($errors->any())
@@ -20,22 +20,22 @@
         </ul>
       </div><br />
     @endif
-      <form method="post" action="{{ route('animais.store') }}">
+    {{$animal->name}}
+      <form method="post" action="{{ route('animais.edit') }}">
           <div class="form-group">
               @csrf
               <label for="name">Nome do dog:</label>
-              <input type="text" class="form-control" name="name"/>
+              <input type="text" class="form-control" name="name" value="{{$animal->name}}"/>
           </div>
           <div class="form-group">
               <label for="breed">Raça</label>
-              <input type="text" class="form-control" name="breed"/>
+              <input type="text" class="form-control" name="breed" value="{{$animal->breed}}"/>
           </div>
           <div class="form-group">
               <label for="gender">Genero</label>
-              <input type="text" class="form-control" name="gender"/>
+              <input type="text" class="form-control" name="gender" value="{{$animal->gender}}"/>
           </div>
-          <button type="submit" name="botao-cadastrar" value="cadastrar" class="btn btn-primary">Cadastrar</button>
-          <button type="submit" name="botao-cadastrar" value="finalizar-cadastro" class="btn btn-secundary">Cadastrar e Finalizar</button>
+          <button type="submit" class="btn btn-primary">Cadastrar</button>
       </form>
   </div>
 </div>

@@ -29,6 +29,13 @@
 				<td>{{$servico->nome}}</td>
 				<td>{{$servico->duracao}}</td>
 				<td>{{$servico->responsavelAtual}}</td>
+				<td>
+					<form action="{{ route('servicos.destroy', $servico->id)}}" method="post">
+						@csrf
+						@method('DELETE')
+						<button class="btn btn-danger" type="submit">Deletar</button>
+					</form>
+				</td>
 			</tr>
 			@endforeach
 		</tbody>

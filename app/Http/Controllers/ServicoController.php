@@ -46,7 +46,13 @@ class ServicoController extends Controller
             'responsavelAtual'=> $request->get('responsavelAtual')
           ]);
           $servico->save();
-          return redirect('/lista-servicos')->with('success', 'Serviço cadastrado com sucesso!');
+
+          if($request->get('botao-cadastrar') == 'cadastro-finalizar') {
+            return redirect('/lista-servicos')->with('Success', 'Serviço cadastrado com sucesso!');
+        } else {
+            return redirect('/cadastro-servicos')->with('Success', 'Serviço cadastrado com sucesso!');
+        }
+          
     }
 
     /**

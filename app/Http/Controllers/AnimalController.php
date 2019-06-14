@@ -46,7 +46,12 @@ class AnimalController extends Controller
             'gender'=> $request->get('gender')
           ]);
           $animal->save();
-          return redirect('/lista-animais')->with('success', 'Animal adicionado com sucesso!');
+        
+        if($request->get('botao-cadastrar') == 'finalizar-cadastro') {
+            return redirect('/lista-animais')->with('Success', 'Animal adicionado com sucesso!');
+        } else {
+            return redirect('/cadastro-animais')->with('Success', 'Animal adicionado com sucesso!');
+        }
     }
 
     /**
@@ -68,7 +73,7 @@ class AnimalController extends Controller
      */
     public function edit(Animal $animal)
     {
-        //
+        return view('listaAnimais', compact('animal'));
     }
 
     /**
@@ -80,7 +85,7 @@ class AnimalController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $validatedData = $request->validate([
+       $validatedData = $request->validate([
             'name' => 'required',
             'breed' => 'required',
             'gender' => 'required',
@@ -88,6 +93,7 @@ class AnimalController extends Controller
         Animal::whereId($id)->update($validatedData);
 
         return redirect('/lista-animais')->with('success', 'Animal editado com sucesso');
+        
     }
 
     public function destroy($id)
