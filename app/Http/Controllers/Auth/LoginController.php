@@ -4,6 +4,7 @@ namespace Projeto4Patas\Http\Controllers\Auth;
 
 use Projeto4Patas\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Projeto4Patas\Rules\Captcha;
 
 class LoginController extends Controller
 {
@@ -35,5 +36,14 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
+    }
+
+    protected function validateLogin(\Illuminate\Http\Request $request)
+    {
+        $request->validate([
+            $this->username() => 'required|string',
+            'password' => 'required|string',
+            'g-recaptcha-response' =>  new Captcha(),
+        ]);
     }
 }
