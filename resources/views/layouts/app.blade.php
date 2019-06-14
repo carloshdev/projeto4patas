@@ -18,13 +18,15 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    @laravelPWA
+    <!-- @laravelPWA -->
     <!--link rel="manifest" href="/manifest.json"-->
     <!--link rel="manifest" href="{{ asset('manifest.json') }}"-->
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
 </head>
 <body class="{{(isset($bodyClass) ? $bodyClass : '')}}">
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav class="navbar navbar-expand-md">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'Projeto 4Patas') }}
@@ -82,6 +84,7 @@
                             
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    <i class="fas fa-user"></i>
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
 

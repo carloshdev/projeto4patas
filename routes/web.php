@@ -17,16 +17,10 @@ use App\Servico;
 // AUTH ------------------------------------------------------------------------------
 Route::middleware(['auth'])->group(function () {
 
-<<<<<<< HEAD
-Route::get('/', function () {
-    return view('auth.login');
-});
-=======
     //rotas de serviços que requerem autenticação
     Route::get('/cadastro-servicos', function () {
         return view('cadastroServicos');
     })->name('cadastro-servicos');
->>>>>>> 6ef6fa2d193b4ac1696d6c1a503b5f23c178f460
 
     Route::resource('servicos', 'ServicoController');
 
@@ -75,5 +69,5 @@ Route::get('/auth/login', 'HomeController@index')->name('home');
 
 // INDEX ---------------------------------------------------------------------------
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
 });

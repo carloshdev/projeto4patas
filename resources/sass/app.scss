@@ -16,3 +16,49 @@ html{
     height: 100%;
     width: 100%;
 }
+
+body{
+    background: url("/img/siteBG.png") no-repeat center 55px;
+    background-size: cover;
+}
+.navbar{
+    background: #33758a;
+    border-radius: 3px;
+
+    .nav-link{
+        color: white;
+    }
+    .navbar-brand{
+        color: white;
+    }
+}
+iframe{
+    margin: 20px auto;
+}
+.card{
+    &-header{
+        background: #33758a;
+        color: white;
+    }
+}
+.btn-primary{
+    background-color: #33A19D;
+    border: none;
+    cursor: pointer;
+
+    &:hover{
+        background-color: #309676;
+    }
+}
+
+.btn-secundary{
+    background-color: #33758A;
+    color: white;
+    border: none;
+    cursor: pointer;
+
+    &:hover{
+        background-color: #336AA1;
+        color: white;
+    }
+}

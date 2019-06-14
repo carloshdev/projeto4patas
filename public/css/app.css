@@ -10646,15 +10646,17 @@ a.text-dark:focus {
   }
 }
 
-.login {
+.login,
+.register {
   width: 100%;
   height: 100%;
-  background: url("/img/4patasbgg.png") no-repeat center 55px;
+  background: url("/img/4patasBG.png") no-repeat center 55px;
   background-size: cover;
   position: relative;
 }
 
-.login:before {
+.login:before,
+.register:before {
   content: "";
   position: absolute;
   left: 0;
@@ -10664,26 +10666,78 @@ a.text-dark:focus {
   height: 100%;
 }
 
-.login #app {
+.login #app,
+.register #app {
   z-index: 2;
   height: 100%;
 }
 
-.login #app .py-4 {
+.login #app .py-4,
+.register #app .py-4 {
   display: flex;
   align-items: center;
   height: 100%;
 }
 
-.login__form {
+.login__form,
+.register__form {
   width: 420px;
   border-radius: 5px;
   float: right;
-  margin-top: 200px;
+  margin-top: 50px;
 }
 
 html {
   height: 100%;
   width: 100%;
+}
+
+body {
+  background: url("/img/siteBG.png") no-repeat center 55px;
+  background-size: cover;
+}
+
+.navbar {
+  background: #33758a;
+  border-radius: 3px;
+}
+
+.navbar .nav-link {
+  color: white;
+}
+
+.navbar .navbar-brand {
+  color: white;
+}
+
+iframe {
+  margin: 20px auto;
+}
+
+.card-header {
+  background: #33758a;
+  color: white;
+}
+
+.btn-primary {
+  background-color: #33A19D;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background-color: #309676;
+}
+
+.btn-secundary {
+  background-color: #33758A;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-secundary:hover {
+  background-color: #336AA1;
+  color: white;
 }
 

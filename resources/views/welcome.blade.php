@@ -82,7 +82,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    Projeto 4 Patas
                 </div>
 
                 <div class="links">
