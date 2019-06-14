@@ -2,6 +2,7 @@
 
 namespace Projeto4Patas\Http\Controllers\Auth;
 
+use Projeto4Patas\Rules\Captcha;
 use Projeto4Patas\User;
 use Projeto4Patas\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
@@ -52,6 +53,7 @@ class RegisterController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'g-recaptcha-response' =>  new Captcha(),
         ]);
     }
 
