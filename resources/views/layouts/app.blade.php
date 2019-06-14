@@ -18,7 +18,6 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <!-- @laravelPWA -->
     <!--link rel="manifest" href="/manifest.json"-->
     <!--link rel="manifest" href="{{ asset('manifest.json') }}"-->
     <!-- FontAwesome -->
@@ -82,6 +81,10 @@
                                 <a class="nav-link" href="{{ route('local-mapa') }}">{{ __('Localização') }}</a>
                             </li>
                             
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('dashboard') }}">{{ __('Dashboard') }}</a>
+                            </li> 
+
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     <i class="fas fa-user"></i>
@@ -100,6 +103,7 @@
                                     </form>
                                 </div>
                             </li>
+
                         <?php /* 
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>

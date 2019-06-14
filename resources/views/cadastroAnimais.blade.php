@@ -32,8 +32,11 @@
                 <input type="text" class="form-control" name="breed"/>
             </div>
             <div class="form-group">
-                <label for="gender">Genero</label>
-                <input type="text" class="form-control" name="gender"/>
+              <label for="gender">Genero</label>
+              <select class="form-control" id="formSelectGenero">
+                <option>Macho</option>
+                <option>Fêmea</option>
+              </select>
             </div>
             <button type="submit" name="botao-cadastrar" value="cadastrar" class="btn btn-primary">Cadastrar</button>
             <button type="submit" name="botao-cadastrar" value="finalizar-cadastro" class="btn btn-secundary">Cadastrar e Finalizar</button>

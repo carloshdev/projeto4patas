@@ -41,6 +41,9 @@ Route::middleware(['auth'])->group(function () {
         return view('home')/*->middleware('gerencial')*/;
 });
 
+    Route::get('/Dashboard', function () {
+        return view('dashboard')/*->middleware('gerencial')*/;
+    })->name('dashboard');
 });
 
 Auth::routes();
