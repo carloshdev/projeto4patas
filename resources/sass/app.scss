@@ -16,10 +16,15 @@ html{
     height: 100%;
     width: 100%;
 }
-
 body{
+    width: 100%;
+    height: 100%;
+}
+#app{
     background: url("/img/siteBG.png") no-repeat center 55px;
     background-size: cover;
+    width: 100%;
+    height: 100%;
 }
 .navbar{
     background: #33758a;

@@ -24,19 +24,16 @@
         <form method="post" action="{{ route('animais.store') }}">
             <div class="form-group">
                 @csrf
-                <label for="name">Nome do dog:</label>
+                <label for="name">Nome do animal:</label>
                 <input type="text" class="form-control" name="name"/>
             </div>
             <div class="form-group">
-                <label for="breed">Raça</label>
+                <label for="breed">Raça:</label>
                 <input type="text" class="form-control" name="breed"/>
             </div>
             <div class="form-group">
-              <label for="gender">Genero</label>
-              <select class="form-control" id="formSelectGenero">
-                <option>Macho</option>
-                <option>Fêmea</option>
-              </select>
+                <label for="gender">Sexo:</label>
+                <input type="text" class="form-control" name="gender"/>
             </div>
             <button type="submit" name="botao-cadastrar" value="cadastrar" class="btn btn-primary">Cadastrar</button>
             <button type="submit" name="botao-cadastrar" value="finalizar-cadastro" class="btn btn-secundary">Cadastrar e Finalizar</button>

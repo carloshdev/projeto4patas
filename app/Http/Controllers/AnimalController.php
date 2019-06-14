@@ -14,9 +14,8 @@ class AnimalController extends Controller
      */
     public function index()
     {
-        //
+        return Animal::all();
     }
-
     /**
      * Show the form for creating a new resource.
      *
@@ -62,7 +61,7 @@ class AnimalController extends Controller
      */
     public function show(Animal $animal)
     {
-        //
+        return Animal::find($animal);
     }
 
     /**

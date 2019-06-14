@@ -14,8 +14,9 @@ class ServicoController extends Controller
      */
     public function index()
     {
-        //
+        return Servico::all();
     }
+
 
     /**
      * Show the form for creating a new resource.
@@ -63,7 +64,7 @@ class ServicoController extends Controller
      */
     public function show(Servico $servico)
     {
-        //
+        return Servico::find($servico);
     }
 
     /**

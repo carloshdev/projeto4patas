@@ -16,3 +16,10 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+
+Route::get('animais', 'AnimalController@index');
+Route::get('animais/{animal}', 'AnimalController@show');
+
+Route::get('servicos', 'ServicoController@index');
+Route::get('servicos/{servico}', 'ServicoController@show');

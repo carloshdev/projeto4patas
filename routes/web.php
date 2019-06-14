@@ -1,7 +1,8 @@
 <?php
 use Illuminate\Support\Facades\Auth;
-use App\Animal;
-use App\Servico;
+use Projeto4Patas\Animal;
+use Projeto4Patas\Servico;
+use Projeto4Patas\Http\Middleware\CheckTipoUsuario;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,7 +21,7 @@ Route::middleware(['auth'])->group(function () {
     //rotas de serviços que requerem autenticação
     Route::get('/cadastro-servicos', function () {
         return view('cadastroServicos');
-    })->name('cadastro-servicos');
+    })->name('cadastro-servicos')->middleware('gerencial');
 
     Route::resource('servicos', 'ServicoController');
 
@@ -41,9 +42,6 @@ Route::middleware(['auth'])->group(function () {
         return view('home')/*->middleware('gerencial')*/;
 });
 
-    Route::get('/Dashboard', function () {
-        return view('dashboard')/*->middleware('gerencial')*/;
-    })->name('dashboard');
 });
 
 Auth::routes();
@@ -67,6 +65,10 @@ Route::get('/lista-servicos', function () {
 Route::get('/local-mapa', function () {  
     return view('mapaOng');
 })->name('local-mapa')/*->middleware('gerencial')*/;
+
+Route::get('/doacao', function () {  
+    return view('doacao');
+})->name('doacao')/*->middleware('gerencial')*/;
 
 Route::get('/auth/login', 'HomeController@index')->name('home');
 
