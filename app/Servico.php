@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace Projeto4Patas;
 
 use Illuminate\Database\Eloquent\Model;
 

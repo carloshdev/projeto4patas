@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Laravel'),
+    'name' => env('APP_NAME', 'Projeto4Patas'),
 
     /*
     |--------------------------------------------------------------------------
@@ -169,11 +169,11 @@ return [
         /*
          * Application Service Providers...
          */
-        App\Providers\AppServiceProvider::class,
-        App\Providers\AuthServiceProvider::class,
-        // App\Providers\BroadcastServiceProvider::class,
-        App\Providers\EventServiceProvider::class,
-        App\Providers\RouteServiceProvider::class,
+        Projeto4Patas\Providers\AppServiceProvider::class,
+        Projeto4Patas\Providers\AuthServiceProvider::class,
+        // Projeto4Patas\Providers\BroadcastServiceProvider::class,
+        Projeto4Patas\Providers\EventServiceProvider::class,
+        Projeto4Patas\Providers\RouteServiceProvider::class,
 
     ],
 

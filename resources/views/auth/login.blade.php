@@ -1,10 +1,10 @@
-@extends('layouts.app')
+@extends('layouts.app',['bodyClass' => 'login'])
 
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
+        <div class="col-md-6">
+            <div class="card login__form">
                 <div class="card-header">{{ __('Login') }}</div>
 
                 <div class="card-body">
@@ -19,7 +19,7 @@
 
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
+                                        <strong>Usuário ou senha estão incorretos!</strong>
                                     </span>
                                 @enderror
                             </div>
@@ -33,7 +33,7 @@
 
                                 @error('password')
                                     <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
+                                        <strong>Usuário ou senha estão incorretos!</strong>
                                     </span>
                                 @enderror
                             </div>

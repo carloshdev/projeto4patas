@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace Projeto4Patas\Http\Controllers;
 
-use App\Servico;
+use Projeto4Patas\Servico;
 use Illuminate\Http\Request;
 
 class ServicoController extends Controller
@@ -52,7 +52,7 @@ class ServicoController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Servico  $servico
+     * @param  \Projeto4Patas\Servico  $servico
      * @return \Illuminate\Http\Response
      */
     public function show(Servico $servico)
@@ -63,7 +63,7 @@ class ServicoController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Servico  $servico
+     * @param  \Projeto4Patas\Servico  $servico
      * @return \Illuminate\Http\Response
      */
     public function edit(Servico $servico)
@@ -75,7 +75,7 @@ class ServicoController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Servico  $servico
+     * @param  \Projeto4Patas\Servico  $servico
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Servico $servico)

@@ -33,7 +33,7 @@
     },
     "autoload": {
         "psr-4": {
-            "App\\": "app/"
+            "Projeto4Patas\\": "app/"
         },
         "classmap": [
             "database/seeds",

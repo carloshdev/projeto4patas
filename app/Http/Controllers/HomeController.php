@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace Projeto4Patas\Http\Controllers;
 
 use Illuminate\Http\Request;
 
